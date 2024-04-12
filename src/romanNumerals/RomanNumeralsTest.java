@@ -6,42 +6,14 @@ import static org.junit.Assert.assertEquals;
 
 public class RomanNumeralsTest {
     @Test
-    public void convert_1() {
+    public void convert_arabic_to_roman() {
         assertEquals("I", romanFor(1));
-    }
-
-    @Test
-    public void convert_2() {
         assertEquals("II", romanFor(2));
-    }
-
-    @Test
-    public void convert_3(){
         assertEquals("III", romanFor(3));
-    }
-
-    @Test
-    public void convert_5(){
         assertEquals("V", romanFor(5));
-    }
-
-    @Test
-    public void convert_6(){
         assertEquals("VI", romanFor(6));
-    }
-
-    @Test
-    public void convert_7(){
         assertEquals("VII", romanFor(7));
-    }
-
-    @Test
-    public void convert_10(){
         assertEquals("X", romanFor(10));
-    }
-
-    @Test
-    public void convert_12(){
         assertEquals("XII", romanFor(12));
     }
 
