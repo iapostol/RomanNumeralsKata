@@ -1,38 +1,25 @@
 package romanNumerals;
 
 import org.junit.Test;
-
-import static org.junit.Assert.assertEquals;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.core.Is.is;
+import static romanNumerals.RomanNumerals.romanFor;
 
 public class RomanNumeralsTest {
     @Test
-    public void convert_arabic_to_roman() {
-        assertEquals("I", romanFor(1));
-        assertEquals("II", romanFor(2));
-        assertEquals("III", romanFor(3));
-        assertEquals("V", romanFor(5));
-        assertEquals("VI", romanFor(6));
-        assertEquals("VII", romanFor(7));
-        assertEquals("X", romanFor(10));
-        assertEquals("XII", romanFor(12));
-    }
-
-    private String romanFor(int arabic) {
-        String roman="";
-
-        if (arabic >= 10) {
-            roman += "X";
-            arabic-=10;
-        }
-
-        if (arabic >= 5) {
-            roman += "V";
-            arabic-=5;
-        }
-
-        for(int i = 0; i<arabic; i++)
-            roman+="I";
-
-        return roman;
+    public void convert_decimal_to_roman() {
+        assertThat(romanFor(1), is("I"));
+        assertThat(romanFor(2), is("II"));
+        assertThat(romanFor(3), is("III"));
+        assertThat(romanFor(4), is("IV"));
+        assertThat(romanFor(5), is("V"));
+        assertThat(romanFor(7), is("VII"));
+        assertThat(romanFor(9), is("IX"));
+        assertThat(romanFor(10), is("X"));
+        assertThat(romanFor(18), is("XVIII"));
+        assertThat(romanFor(30), is("XXX"));
+        assertThat(romanFor(40), is("XL"));
+        assertThat(romanFor(1981), is("MCMLXXXI"));
+        assertThat(romanFor(2024), is("MMXXIV"));
     }
 }
